@@ -133,7 +133,7 @@ export default function WhyVudu() {
 
         {/* Bottom stat bar */}
         <motion.div
-          className="mt-16 rounded-3xl p-8 glass-dark grid grid-cols-2 lg:grid-cols-4 gap-6 divide-x divide-white/10"
+          className="mt-16 rounded-3xl p-8 glass-dark grid grid-cols-2 lg:grid-cols-4 gap-6"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
@@ -147,7 +147,7 @@ export default function WhyVudu() {
           ].map((stat, i) => (
             <motion.div
               key={i}
-              className="flex flex-col items-center gap-1 text-center pl-6 first:pl-0"
+              className="flex flex-col items-center gap-1 text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

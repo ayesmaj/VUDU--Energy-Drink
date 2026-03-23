@@ -104,7 +104,7 @@ export default function FlavorExperience() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             {/* Left — Real can photo */}
-            <div className="flex items-center justify-center relative min-h-[480px]">
+            <div className="flex items-center justify-center relative min-h-[300px] sm:min-h-[480px]">
               {/* Glow blob behind can */}
               <div
                 className="absolute rounded-full pointer-events-none"
@@ -127,7 +127,7 @@ export default function FlavorExperience() {
               ].map((p, pi) => (
                 <motion.div
                   key={pi}
-                  className="absolute pointer-events-none select-none"
+                  className="absolute pointer-events-none select-none hidden sm:block"
                   style={{ left: p.x, top: p.y, fontSize: p.size }}
                   animate={{ y: [0, -14, 0], rotate: [0, 5, -5, 0] }}
                   transition={{
@@ -243,7 +243,7 @@ export default function FlavorExperience() {
         </AnimatePresence>
 
         {/* Flavor cards row */}
-        <div className="grid grid-cols-3 gap-4 mt-20">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-20">
           {FLAVORS.map((f, i) => (
             <motion.button
               key={f.id}

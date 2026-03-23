@@ -63,7 +63,7 @@ export default function Navbar() {
       <motion.header
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-          scrolled ? "glass-dark" : "bg-transparent"
+          scrolled || pathname !== "/" ? "glass-dark" : "bg-transparent"
         )}
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -88,7 +88,7 @@ export default function Navbar() {
                 alt="VUDU logo mark"
                 fill
                 className="object-contain"
-                style={{ filter: scrolled ? "none" : "brightness(0)" }}
+                style={{ filter: scrolled || pathname !== "/" ? "none" : "brightness(0)" }}
                 onError={() => {/* fallback — image not yet placed */}}
                 unoptimized
               />
@@ -96,7 +96,7 @@ export default function Navbar() {
             <span
               className="font-display font-black text-3xl tracking-wider"
               style={{
-                color: scrolled ? "#FAFAF5" : "#0A0908",
+                color: scrolled || pathname !== "/" ? "#FAFAF5" : "#0A0908",
                 letterSpacing: "0.15em",
               }}
             >
@@ -113,7 +113,7 @@ export default function Navbar() {
                 className={cn(
                   "px-4 py-2 rounded-full font-heading font-medium text-sm tracking-wide transition-all duration-200",
                   "hover:bg-white/10",
-                  scrolled ? "text-white/80 hover:text-white" : "text-vudu-dark/70 hover:text-vudu-dark"
+                  scrolled || pathname !== "/" ? "text-white/80 hover:text-white" : "text-vudu-dark/70 hover:text-vudu-dark"
                 )}
               >
                 {link.label}
@@ -149,7 +149,7 @@ export default function Navbar() {
               whileTap={{ scale: 0.93 }}
               aria-label="Open cart"
             >
-              <ShoppingBag size={18} style={{ color: scrolled ? (totalItems > 0 ? "#E8860A" : "rgba(255,255,255,0.7)") : (totalItems > 0 ? "#E8860A" : "#0A0908") }} />
+              <ShoppingBag size={18} style={{ color: scrolled || pathname !== "/" ? (totalItems > 0 ? "#E8860A" : "rgba(255,255,255,0.7)") : (totalItems > 0 ? "#E8860A" : "#0A0908") }} />
               <AnimatePresence>
                 {totalItems > 0 && (
                   <motion.span
@@ -189,7 +189,7 @@ export default function Navbar() {
                   key={i}
                   className={cn(
                     "block h-[2px] rounded-full transition-all duration-300",
-                    scrolled ? "bg-white" : "bg-vudu-dark",
+                    scrolled || pathname !== "/" ? "bg-white" : "bg-vudu-dark",
                     menuOpen && i === 0 && "w-5 translate-y-[7px] rotate-45",
                     menuOpen && i === 1 && "w-0 opacity-0",
                     menuOpen && i === 2 && "w-5 -translate-y-[7px] -rotate-45",

@@ -119,7 +119,7 @@ export default function Hero() {
       {PARTICLES.map((p, i) => (
         <div
           key={i}
-          className="hero-particle pointer-events-none absolute select-none"
+          className="hero-particle pointer-events-none absolute select-none hidden sm:block"
           style={{
             left: p.x, top: p.y,
             fontSize: p.size,
@@ -217,7 +217,7 @@ export default function Hero() {
 
             {/* Stats row */}
             <motion.div
-              className="hero-sub flex gap-8 pt-4 border-t border-vudu-dark/10"
+              className="hero-sub flex gap-4 sm:gap-8 pt-4 border-t border-vudu-dark/10"
               style={{ opacity: 0 }}
             >
               {[
@@ -226,7 +226,7 @@ export default function Hero() {
                 { val: "Zero",  label: "Artificial Colors" },
               ].map((stat) => (
                 <div key={stat.label} className="flex flex-col gap-1">
-                  <span className="font-display font-black text-5xl text-vudu-dark">{stat.val}</span>
+                  <span className="font-display font-black text-3xl sm:text-5xl text-vudu-dark">{stat.val}</span>
                   <span className="font-body text-xs text-vudu-dark/50 uppercase tracking-widest">{stat.label}</span>
                 </div>
               ))}
@@ -288,7 +288,7 @@ export default function Hero() {
             ].map((badge, i) => (
               <motion.div
                 key={i}
-                className="absolute glass-dark rounded-full px-3 py-1.5 flex items-center gap-2 hero-cta"
+                className="absolute glass-dark rounded-full px-3 py-1.5 items-center gap-2 hero-cta hidden lg:flex"
                 style={{
                   left: badge.x !== "auto" ? badge.x : undefined,
                   right: badge.right,
